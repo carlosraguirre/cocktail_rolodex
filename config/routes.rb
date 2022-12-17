@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   patch "/cocktails/:id" => "cocktails#update"
   delete "/cocktails/:id" => "cocktails#destroy"
 
+  post "/users" => "users#create"
+  get "/users" => "users#index"
+  get "/users/:id" => "users#show"
 
 end
