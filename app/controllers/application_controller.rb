@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::API
-  class ApplicationController < ActionController::API
-    def current_user
+  def current_user
+    @current_user ||= begin
       auth_headers = request.headers["Authorization"]
       if auth_headers.present? && auth_headers[/(?<=\A(Bearer ))\S+\z/]
         token = auth_headers[/(?<=\A(Bearer ))\S+\z/]
         begin
+          # binding.pry
           decoded_token = JWT.decode(
             token,
             Rails.application.credentials.fetch(:secret_key_base),
@@ -17,11 +18,11 @@ class ApplicationController < ActionController::API
         end
       end
     end
-  
-    def authenticate_user
-      unless current_user
-        render json: {}, status: :unauthorized
-      end
+  end
+
+  def authenticate_user
+    unless current_user
+      render json: {}, status: :unauthorized
     end
   end
 end
