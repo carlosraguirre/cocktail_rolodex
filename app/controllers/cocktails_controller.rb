@@ -1,6 +1,4 @@
 class CocktailsController < ApplicationController
-  before_action :authenticate_user, only: [:create, :update, :destroy]
-
   def index
     cocktails = Cocktail.all
     render json: cocktails
@@ -12,7 +10,7 @@ class CocktailsController < ApplicationController
   end
 
   def create
-    cocktail = current_user.cocktails.new(
+    cocktail = Cocktail.new(
       cocktail_name: params[:cocktail_name],
       ingredient: params[:ingredient],
       direction: params[:direction],
@@ -26,15 +24,13 @@ class CocktailsController < ApplicationController
   end
 
   def destroy
-    cocktail = current_user.cocktails.find_by(id: params[:id])
-
+    cocktail = Cocktail.find_by(id: params[:id])
     cocktail.destroy
     render json: cocktail
   end
 
   def update
-    cocktail = current_user.cocktails.find_by(id: params[:id])
-
+    cocktail =Cocktail.find_by(id: params[:id])
     cocktail.cocktail_name = params[:cocktail_name] || cocktail.cocktail_name
     cocktail.ingredient = params[:ingredient] || cocktail.ingredient
     cocktail.direction = params[:direction] || cocktail.direction
