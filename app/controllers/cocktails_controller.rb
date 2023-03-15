@@ -15,6 +15,7 @@ class CocktailsController < ApplicationController
       ingredient: params[:ingredient],
       direction: params[:direction],
       recipe_link: params[:recipe_link],
+      favorite: params[:favorite],
     )
     if cocktail.save
       render json: cocktail
