@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'cocktailrolodex.netlify.app', 'localhost:8080'
+    origins 'cocktailrolodex.netlify.app', 'localhost:8080', 'cocktailrolodex-production.up.railway.app'
 
     resource '*',
       headers: :any,
