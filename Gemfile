@@ -48,3 +48,5 @@ gem 'http'
 gem 'rest-client', '~> 2.1'
 
 gem 'prettyprint'
+
+gem 'seed_dump'
