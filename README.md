@@ -1,24 +1,10 @@
-# README
+Cocktail Rolodex is designed to be a quality of life improvement for me.
+Using Ruby on Rails for the backend and Vue.js for the frontend, I created
+my Cocktail Rolodex to save and cocktail recipes I find online, on social media,
+in books and anywhere in between. Perhaps the most important feature to me is
+searching every saved recipe my name or ingredients.
+This is where my website excels beyond bookmarking a recipe page in your web browser.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Try out Cocktail Rolodex and search through my favorite recipes!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This project was deployed on Railway and Netlify.
