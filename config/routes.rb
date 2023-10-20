@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/users" => "users#index"
   get "/users/:id" => "users#show"
 
+  post "/favorites" => "favorites#create"
+
   post "/sessions" => "sessions#create"
 
 end
