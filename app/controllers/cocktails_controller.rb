@@ -31,7 +31,7 @@ class CocktailsController < ApplicationController
   end
 
   def update
-    cocktail =Cocktail.find_by(id: params[:id])
+    cocktail = Cocktail.find_by(id: params[:id])
     cocktail.cocktail_name = params[:cocktail_name] || cocktail.cocktail_name
     cocktail.ingredient = params[:ingredient] || cocktail.ingredient
     cocktail.direction = params[:direction] || cocktail.direction

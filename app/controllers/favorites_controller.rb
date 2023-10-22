@@ -22,4 +22,15 @@ class FavoritesController < ApplicationController
     render json: favorite
   end
 
+  def update
+    favorite = Favorite.find_by(id: params[:id])
+    favorite.is_favorite = params[:is_favorite] || favorite.is_favorite
+
+    if favorite.save
+      render json: favorite
+    else
+      render json: {error: favorite.errors.full_messages}, status: :unprocessable_entity
+    end
+  end
+
 end
