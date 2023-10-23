@@ -1,6 +1,6 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  # attributes :id, :cocktail_name
+  attributes :id,
 
-  # belongs_to :user
-  # belongs_to :cocktails
+  belongs_to :user
+  belongs_to :cocktails
 end
