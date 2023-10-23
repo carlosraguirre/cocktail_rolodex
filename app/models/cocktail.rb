@@ -1,4 +1,4 @@
 class Cocktail < ApplicationRecord
   belongs_to :user
-  belongs_to :favorites
+  has_many :favorites
 end

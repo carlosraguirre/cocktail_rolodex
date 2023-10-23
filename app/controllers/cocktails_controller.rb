@@ -36,7 +36,6 @@ class CocktailsController < ApplicationController
     cocktail.ingredient = params[:ingredient] || cocktail.ingredient
     cocktail.direction = params[:direction] || cocktail.direction
     cocktail.recipe_link = params[:recipe_link] || cocktail.recipe_link
-    cocktail.favorite = params[:favorite] || cocktail.favorite
 
     if cocktail.save
       render json: cocktail
