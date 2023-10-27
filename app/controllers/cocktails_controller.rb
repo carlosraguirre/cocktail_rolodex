@@ -15,7 +15,9 @@ class CocktailsController < ApplicationController
       ingredient: params[:ingredient],
       direction: params[:direction],
       recipe_link: params[:recipe_link],
+      user_id: current_user.id,
     )
+    # binding.pry
     if cocktail.save
       render json: cocktail
     else
@@ -44,4 +46,3 @@ class CocktailsController < ApplicationController
   end
 
 end
-

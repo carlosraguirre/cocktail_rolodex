@@ -7,7 +7,7 @@ class FavoritesController < ApplicationController
   
   def create
     favorite = Favorite.new(
-      user_id: current_user.id
+      user_id: current_user.id,
     )
     if favorite.save
       render json: favorite
