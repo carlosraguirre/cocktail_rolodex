@@ -17,7 +17,6 @@ class CocktailsController < ApplicationController
       recipe_link: params[:recipe_link],
       user_id: current_user.id,
     )
-    # binding.pry
     if cocktail.save
       render json: cocktail
     else
