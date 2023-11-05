@@ -1,9 +1,7 @@
 class CocktailsController < ApplicationController
   def index
-    if current_user
-      cocktails = Cocktail.order(favorite: "desc")
-      render json: cocktails
-    end
+    cocktails = Cocktail.order(favorite: "desc")
+    render json: cocktails
   end
 
   def show
