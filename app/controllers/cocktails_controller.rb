@@ -1,6 +1,6 @@
 class CocktailsController < ApplicationController
   def index
-    cocktails = Cocktail.order(favorite: "desc")
+    cocktails = Cocktail.order('created_at DESC')
     render json: cocktails
   end
 
