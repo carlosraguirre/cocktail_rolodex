@@ -15,6 +15,7 @@ class CocktailsController < ApplicationController
       ingredient: params[:ingredient],
       direction: params[:direction],
       recipe_link: params[:recipe_link],
+      tag: params[:tag],
       user_id: current_user.id,
     )
     if cocktail.save
@@ -38,6 +39,7 @@ class CocktailsController < ApplicationController
       cocktail.direction = params[:direction] || cocktail.direction
       cocktail.recipe_link = params[:recipe_link] || cocktail.recipe_link
       cocktail.favorite = params[:favorite || cocktail.favorite]
+      cocktail.tag = params[:tag] || cocktail.tag
       cocktail.user_id = current_user.id
 
       if cocktail.save
