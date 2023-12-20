@@ -1,7 +1,12 @@
 class CocktailsController < ApplicationController
   def index
-    cocktails = Cocktail.order('created_at DESC')
-    render json: cocktails
+    if current_user
+      cocktails = Cocktail.order('created_at DESC')
+      render json: cocktails
+
+    else
+      render json: [], status: unauthorized
+    end
   end
 
   def show
