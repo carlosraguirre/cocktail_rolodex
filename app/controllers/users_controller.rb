@@ -18,8 +18,8 @@ class UsersController < ApplicationController
     render json: users
   end
 
-  def show
-    user = current_user
-    render json: user
-  end
+  # def show
+  #   user = current_user
+  #   render json: user
+  # end
 end
